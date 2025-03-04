@@ -1,0 +1,2 @@
+git push //to backup
+git pull upstream main //new exercises
