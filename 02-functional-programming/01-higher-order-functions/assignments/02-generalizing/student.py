@@ -398,4 +398,4 @@ def find_number_greater_than(numbers,threshold):
 # print(sum_movie_duration_from_period(movies,2015,2025))
 # print(get_directors_of_actor(movies,"Tom Cruise"))
 # print(find_string_starting_with(strings,"b"))
-print(find_number_greater_than(numbers,2000))
+# print(find_number_greater_than(numbers,2000))
