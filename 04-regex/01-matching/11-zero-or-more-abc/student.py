@@ -1,1 +1,13 @@
-# Write your code here
+import re
+
+def zero_or_more_abc(string):
+    return bool(re.fullmatch("(abc){0,}",string))
+
+string=""
+print(zero_or_more_abc(string))
+string="abc"
+print(zero_or_more_abc(string))
+string="abcabcabcabcabcabcabcabcabcabcabc"
+print(zero_or_more_abc(string))
+string="abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc"
+print(zero_or_more_abc(string))

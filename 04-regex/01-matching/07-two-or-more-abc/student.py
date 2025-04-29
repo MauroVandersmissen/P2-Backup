@@ -1,1 +1,11 @@
-# Write your code here
+import re
+
+def two_or_more_abc(string):
+    return bool(re.fullmatch("(abc){2,}",string))
+
+string="abc"
+print(two_or_more_abc(string))
+string="abcabc"
+print(two_or_more_abc(string))
+string="abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc"
+print(two_or_more_abc(string))
