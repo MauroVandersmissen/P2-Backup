@@ -35,4 +35,40 @@ def test_calories(distance, duration, expected):
     swim = Swim("2025-05-20", distance, duration)
     assert swim.calories == expected
 
+def test_constructor():
+    swim = Swim("2025-06-01", 5, 60)
+    assert swim.date == "2025-06-01"
+    assert swim.distance == 5
+    assert swim.duration == 60
 
+def test_invalid_date():
+    with pytest.raises(ValueError):
+        Swim("20250-06-01", 5, 60)
+        Swim("2025/06/01", 5, 60)
+        Swim("2025-06-1", 5, 60)
+
+def test_invalid_distance():
+    with pytest.raises(ValueError):
+        Swim("2025-06-01", -5, 60)
+        Swim("2025-06-01", 0, 60)
+
+def test_invalid_duration():
+    with pytest.raises(ValueError):
+        Swim("2025-06-01", 5, -60)
+        Swim("2025-06-01", 5, 0)
+
+def test_invalid_speed():
+    with pytest.raises(ValueError):
+        Swim("2025-06-01", 10, 60)
+
+@pytest.mark.parametrize(
+    "distance, duration, expected",
+    [
+        (5, 60, 1000),
+        (3, 70, 308),
+        (1.5, 30, 180)
+    ]
+)
+def test_calories2(distance, duration, expected):
+    swim = Swim("2025-06-01", distance, duration)
+    assert swim.calories == expected

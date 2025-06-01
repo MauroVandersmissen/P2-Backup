@@ -1,4 +1,4 @@
-from starter_code import *
+from student import *
 
 # Some methods to easily showcase activities
 def print_run(r):
@@ -48,3 +48,41 @@ log.add(ride1)
 total = log.total_calories_burnt()
 print(f"Total calories burned across all activities: {total}")
 # → Total calories burned across all activities: 2275
+
+morning_run = Run("2023-10-02", 5, 21, 12)
+print(morning_run.calories) # 800
+evening_bike_ride = Ride("2023-10-01", 20, 60, 0)
+print(evening_bike_ride.calories) # 800
+print(morning_run == evening_bike_ride) # True
+print(morning_run < evening_bike_ride) # False
+print(morning_run > evening_bike_ride) # False
+log.add(morning_run)
+log.add(evening_bike_ride)
+
+print("Filtered by date (2023-10-02):")
+date_filter = log.filter_by_date("2023-10-02")
+for ex in date_filter:
+    if isinstance(ex, Run):
+        print_run(ex)
+    elif isinstance(ex, Swim):
+        print_swim(ex)
+    elif isinstance(ex, Ride):
+        print_ride(ex)
+print("Filtered by distance (10):")
+distance_filter = log.filter_by_distance(10)
+for ex in distance_filter:
+    if isinstance(ex, Run):
+        print_run(ex)
+    elif isinstance(ex, Swim):
+        print_swim(ex)
+    elif isinstance(ex, Ride):
+        print_ride(ex)
+print("Filtered by calories (800):")
+calorie_filter = log.filter(lambda exercise: exercise.calories > 800)
+for ex in calorie_filter:
+    if isinstance(ex, Run):
+        print_run(ex)
+    elif isinstance(ex, Swim):
+        print_swim(ex)
+    elif isinstance(ex, Ride):
+        print_ride(ex)
