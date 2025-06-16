@@ -30,17 +30,17 @@ def recursive_draw(tur, x, y, width, height, count):
         tur,
         [x + width * 0.25, height // 2 + y],
         [x + width * 0.75, height // 2 + y],
-    )
+    ) # Middle line, left to right
     draw_line(
         tur,
         [x + width * 0.25, (height * 0.5) // 2 + y],
         [x + width * 0.25, (height * 1.5) // 2 + y],
-    )
+    ) # Left line, bottom to top
     draw_line(
         tur,
         [x + width * 0.75, (height * 0.5) // 2 + y],
         [x + width * 0.75, (height * 1.5) // 2 + y],
-    )
+    ) # Right line, bottom to top
 
     if count <= 0:  # The base case
         return

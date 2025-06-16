@@ -25,3 +25,12 @@ def collect_links(string):
 
 
 print(collect_links('<a href="https://www.example1.com">Link 1</a> <a href="https://www.example2.com">Link 2</a> <a href="https://www.example3.com">Link 3</a>'))
+
+# import re
+# def collect_links(string):
+#     p = r'<a href="(.*)">'
+#     match = re.findall(p, string)
+#     return match
+
+
+# print(collect_links('<a href="https://www.example1.com">Link 1</a> <a href="https://www.example2.com">Link 2</a> <a href="https://www.example3.com">Link 3</a>'))
