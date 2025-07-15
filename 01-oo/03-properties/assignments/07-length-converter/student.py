@@ -23,11 +23,11 @@ class LengthConverter:
         self.__distance_in_meter = value / 3.28084
 
     @property
-    def inches(self):
+    def inch(self):
         return self.__distance_in_meter * 39.3701
 
-    @inches.setter
-    def inches(self, value):
+    @inch.setter
+    def inch(self, value):
         if value < 0:
             raise ValueError("Distance cannot be negative")
         self.__distance_in_meter = value / 39.3701
@@ -35,7 +35,7 @@ class LengthConverter:
 converter = LengthConverter()
 converter.meter = 100
 print(converter.feet)
-print(converter.inches)
+print(converter.inch)
 print(converter.meter)
 converter.feet = 5
-print(converter.inches)
+print(converter.inch)
